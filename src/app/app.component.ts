@@ -1,12 +1,19 @@
+import { JsonPipe, NgClass, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [FormsModule, JsonPipe, NgIf, NgClass],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'emailform';
+  email:string = '';
+
+
+  onSubmit() {
+    console.log(this.email)
+  }
 }
